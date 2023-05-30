@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Products;
 class insertProducts extends Controller
 {
     function products(){
-        return view('products');
+        $product=Products::all();
+        return response()->json(
+            $product
+        );
     }
+
+
 
     function add(Request $request){
         $request->validate([

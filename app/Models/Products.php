@@ -1,23 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
-class TenController extends Controller
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+class Products extends Model
 {
-    public function insertData()
-    {
-        $data = [
-            'id' => '01',
-            'name' => 'A Lực',
-            'price' => '100',
-            'image' => 'none',
-        ];
-
-        DB::table('products')->insert($data);
-
-        return "Dữ liệu đã được chèn thành công.";
-    }
+    use  HasFactory;
+    protected $fillable=[
+        "name",
+        "price",
+        "image"
+    ];
 }
