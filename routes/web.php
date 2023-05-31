@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Schema;
 use App\Http\Controllers\tableController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\insertProducts;
-
+use App\Http\Controllers\PageController;
 /*
 
 /*
@@ -41,5 +41,10 @@ use App\Http\Controllers\insertProducts;
 // Route::get('/',[tableController::class,'create']);
 // Route::get('/add',[PostController::class,'add']);
 
-Route::get('view',[insertProducts::class, 'products']);
-Route::post('add',[insertProducts::class, 'add']);
+// Route::get('view',[insertProducts::class, 'products']);
+// Route::post('add',[insertProducts::class, 'add']);
+
+Route::get('/master',[PageController::class,'getIndex']);
+				
+Route::get('/detail/{id}',[PageController::class,'getDetail']);
+				
